@@ -4,7 +4,7 @@ A custom-built eCommerce store, built with JavaScript, HTML and CSS, containing 
 
 1. Responsive design using the Bootstrap framework, via CDN.
    
-2. 'Add to Cart' stores selected products in Local Storage.
+2. 'Add to Cart' stores selected products in Local Storage, whether you're on or offline.
 
 3. A cart icon is used to alert the User and display the number of items selected.
    
