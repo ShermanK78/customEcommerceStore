@@ -1,6 +1,6 @@
 # customEcommerceStore
 
-A custom-built eCommerce store, built with JavaScript, HTML and CSS, containing the following features:
+A custom-built eCommerce store, created with JavaScript, HTML and CSS, containing the following features:
 
 1. Responsive design using the Bootstrap framework, via CDN.
    
