@@ -1,13 +1,12 @@
 /* GLOBAL STYLES
 -------------------------------------------------- */
-/* Padding below the footer and lighter body text */
 
+/* Padding below the footer and lighter body text */
 body {
   padding-top: 3rem;
   padding-bottom: 3rem;
   color: rgb(var(--bs-tertiary-color-rgb));
 }
-
 
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */
@@ -16,6 +15,7 @@ body {
 .carousel {
   margin-bottom: 4rem;
 }
+
 /* Since positioning the image, we need to help out the caption */
 .carousel-caption {
   bottom: 3rem;
@@ -27,7 +27,6 @@ body {
   height: 32rem;
 }
 
-
 /* MARKETING CONTENT
 -------------------------------------------------- */
 
@@ -36,13 +35,13 @@ body {
   margin-bottom: 1.5rem;
   text-align: center;
 }
+
 /* rtl:begin:ignore */
 .marketing .col-lg-4 p {
   margin-right: .75rem;
   margin-left: .75rem;
 }
 /* rtl:end:ignore */
-
 
 /* Featurettes
 ------------------------- */
@@ -56,7 +55,6 @@ body {
 .featurette-heading {
   letter-spacing: -.05rem;
 }
-
 /* rtl:end:remove */
 
 /* RESPONSIVE CSS
@@ -80,30 +78,36 @@ body {
     margin-top: 7rem;
   }
 }
+
+/* Background images for the carousel */
+
 .bd-placeholder-img-1 {
   background-image: url("C:/Users/Camilla/Pictures/AI-cybersecurity-scaled.jpg");
   background-size: cover;
   max-width: 100vw;
   max-height: 100vh;
-  
 }
+
 .bd-placeholder-img-2 {
   background-image: url("C:/Users/Camilla/Desktop/MERN/Design Files/weather-app-img/images/regular_1708x683_staging.toptal.net_react_react-seo-best-practices-ed6f6c2c1a89dcf71c9f845c32edb9c1-7c9b1683bdbb4db5bfa6dfee97e91d6c.png");
   background-size: cover;
   max-width: 100vw;
   max-height: 100vh;
-  
 }
+
 .bd-placeholder-img-3 {
   background-image: url("C:/Users/Camilla/Desktop/MERN/Design Files/weather-app-img/images/Offline-app.png");
   background-size: cover;
   max-width: 100vw;
   max-height: 100vh;
-  
 }
+
+/* Custom CSS for navigation */
+
 .nav-item {
   margin-left: 10px;
 }
+
 .header {
   height: 80px;
   width: 70%;
@@ -115,21 +119,20 @@ body {
   justify-content: space-between;
   padding: 15px;
 }
+
 .header .logo {
   font-size: 30px;
   font-weight: bold;
   color: white;
 }
-/* Custom CSS */
+
 .white-icon {
   color: white;
 }
 
-
 /* CSS for the modal */
 
-
-
+/* CSS for the modal buttons */
 .modal-buttons {
   text-align: right;
 }
@@ -159,9 +162,7 @@ body {
   border-radius: 8px;
   max-height: 100vh; /* Adjust the max height as needed */
   background-color: rgba(4, 17, 132, 0.521);
-
 }
-
 
 /* CSS for the cards container */
 .container {
@@ -175,12 +176,14 @@ body {
   margin: 10px;
 }
 
-
 /* CSS for the individual modal buttons */
-#stayBtn, #leaveBtn {
+#stayBtn,
+#leaveBtn {
   flex: 1;
   margin: 5px;
 }
+
+/* Custom CSS */
 img {
   max-width: 40vw;
   max-height: 40vw;
