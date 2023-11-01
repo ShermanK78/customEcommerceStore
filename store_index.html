@@ -1,8 +1,11 @@
+<!-- PLEASE NOTE
+1. The template for this page was sourced from here: https://getbootstrap.com/docs/5.3/examples/carousel/
+-->
+
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
   <head>
 
-    <!-- Meta tags to define character set, viewport, and other important information -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
@@ -10,308 +13,153 @@
     <meta name="generator" content="Hugo 0.111.3">
     <title>Carousel Template · Bootstrap v5.3</title>
 
-    <!-- Canonical link to specify the preferred version of a webpage -->
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/carousel/">
 
-    <!-- External CSS file from Bootstrap -->
+    <!-- Link to Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-
-    <!-- Internal CSS styles for the page -->
+    
+    <!-- Custom CSS styles -->
     <style>
-      /* Some CSS styles for various elements */
-
-      /* Styles for an image placeholder with Bootstrap class */
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
-      }
-
-      /* Styles for larger image placeholder on larger screens */
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-
-      /* Styles for a vertical divider */
-      .b-example-divider {
-        width: 100%;
-        height: 3rem;
-        background-color: rgba(0, 0, 0, .1);
-        border: solid rgba(0, 0, 0, .15);
-        border-width: 1px 0;
-        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
-      }
-
-      /* Styles for a vertical divider (another variation) */
-      .b-example-vr {
-        flex-shrink: 0;
-        width: 1.5rem;
-        height: 100vh;
-      }
-
-      /* Styles for Bootstrap icon */
-      .bi {
-        vertical-align: -.125em;
-        fill: currentColor;
-      }
-
-      /* Styles for a scrolling navigation bar */
-      .nav-scroller {
-        position: relative;
-        z-index: 2;
-        height: 2.75rem;
-        overflow-y: hidden;
-      }
-
-      /* Styles for the items in the scrolling navigation bar */
-      .nav-scroller .nav {
-        display: flex;
-        flex-wrap: nowrap;
-        padding-bottom: 1rem;
-        margin-top: -1px;
-        overflow-x: auto;
-        text-align: center;
-        white-space: nowrap;
-        -webkit-overflow-scrolling: touch;
-      }
-
-      /* Custom styles for a primary button in Bootstrap */
-      .btn-bd-primary {
-        /* Some CSS variables defined for colors */
-        --bd-violet-bg: #712cf9;
-        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
-
-        /* Button styles using the CSS variables */
-        --bs-btn-font-weight: 600;
-        --bs-btn-color: var(--bs-white);
-        --bs-btn-bg: var(--bd-violet-bg);
-        --bs-btn-border-color: var(--bd-violet-bg);
-        --bs-btn-hover-color: var(--bs-white);
-        --bs-btn-hover-bg: #6528e0;
-        --bs-btn-hover-border-color: #6528e0;
-        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
-        --bs-btn-active-color: var(--bs-btn-hover-color);
-        --bs-btn-active-bg: #5a23c8;
-        --bs-btn-active-border-color: #5a23c8;
-      }
-
-      /* Some custom styles for a mode toggle element */
-      .bd-mode-toggle {
-        z-index: 1500;
-      }
+      /* Add your custom styles here */
     </style>
-
+    
     <!-- Custom styles for this template -->
-    <link href="carousel.css" rel="stylesheet">
+    <link href="./graphics/carousel.css" rel="stylesheet">
   </head>
-  <body>
-    <!-- SVG symbols, likely used for icons in the page -->
-
-    <!-- Dropdown button to toggle themes -->
-    <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
-      <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center"
-              id="bd-theme"
-              type="button"
-              aria-expanded="false"
-              data-bs-toggle="dropdown"
-              aria-label="Toggle theme (auto)">
-        <!-- SVG icon for theme toggle -->
-        <svg class="bi my-1 theme-icon-active" width="1em" height="1em"><use href="#circle-half"></use></svg>
-        <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+<body>
+<!--NAVIGATION START-->
+<header data-bs-theme="dark">
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="">GTE</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
       </button>
-      <!-- Dropdown menu for selecting theme options -->
-      <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
-        <!-- Light theme option -->
-        <li>
-          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
-            <!-- SVG icon for light theme -->
-            <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#sun-fill"></use></svg>
-            Light
-            <!-- SVG icon for active selection -->
-            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
-          </button>
-        </li>
-        <!-- Dark theme option -->
-        <li>
-          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
-            <!-- SVG icon for dark theme -->
-            <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#moon-stars-fill"></use></svg>
-            Dark
-            <!-- SVG icon for active selection -->
-            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
-          </button>
-        </li>
-        <!-- Auto theme option (default) -->
-        <li>
-          <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
-            <!-- SVG icon for auto theme -->
-            <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#circle-half"></use></svg>
-            Auto
-            <!-- SVG icon for active selection -->
-            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
-          </button>
-        </li>
-      </ul>
-    </div>
-
-    <!--NAVIGATION START-->
-    <header data-bs-theme="dark">
-      <!-- Bootstrap navbar -->
-      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <div class="container-fluid">
-          <!-- Navbar brand/logo -->
-          <a class="navbar-brand" href="">GTE</a>
-          <!-- Navbar toggle button for smaller screens -->
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-            <!-- Navigation links -->
-            <ul class="navbar-nav me-auto mb-2 mb-md-0">
-              <li class="nav-item">
-                <a class="nav-link fw-bold py-1 px-0 active" aria-current="page" href="index.html">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link fw-bold py-1 px-0" href="store.html">Store</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link fw-bold py-1 px-0" href="preview.html">Preview</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link fw-bold py-1 px-0" href="contact.html">Contact</a>
-              </li>
-            </ul>
-            <!-- Search form -->
-            <form class="d-flex" role="search">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
-          </div>
-        </div>
-      </nav>
-      <!--NAVIGATION END-->
-    </header>
-
-    <main>
-      <!-- Carousel -->
-      <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
-        <!-- Carousel indicators -->
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        </div>
-        <!-- Carousel slides -->
-        <div class="carousel-inner">
-          <!-- First slide -->
-          <div class="carousel-item active">
-            <!-- SVG image placeholder -->
-            <svg class="bd-placeholder-img-1" width="100vw" height="100vh" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
-              <rect width="100%" height="100%" fill="var(--bs-secondary-color)"/>
-            </svg>
-            <div class="container">
-              <div class="carousel-caption text-start">
-                <h1>Example headline.</h1>
-                <p>Some representative placeholder content for the first slide of the carousel.</p>
-                <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
-              </div>
-            </div>
-          </div>
-          <!-- Second slide -->
-          <div class="carousel-item">
-            <!-- SVG image placeholder -->
-            <svg class="bd-placeholder-img-2" width="100vw" height="100vh" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
-              <rect width="100%" height="100%" fill="var(--bs-secondary-color)"/>
-            </svg>
-            <div class="container">
-              <div class="carousel-caption">
-                <h1>Another example headline.</h1>
-                <p>Some representative placeholder content for the second slide of the carousel.</p>
-                <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
-              </div>
-            </div>
-          </div>
-          <!-- Third slide -->
-          <div class="carousel-item">
-            <!-- SVG image placeholder -->
-            <svg class="bd-placeholder-img-3" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
-              <rect width="100%" height="100%" fill="var(--bs-secondary-color)"/>
-            </svg>
-            <div class="container">
-              <div class="carousel-caption text-end">
-                <h1>One more for good measure.</h1>
-                <p>Some representative placeholder content for the third slide of this carousel.</p>
-                <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Carousel control buttons -->
-        <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+          <li class="nav-item">
+            <a class="nav-link fw-bold  active" aria-current="page" href="store_index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fw-bold " href="store.html">Store</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fw-bold " href="preview.html">Preview</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fw-bold " href="contact.html">Contact</a>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
       </div>
+    </div>
+  </nav>
+  <!--NAVIGATION END-->
+</header>
 
-      <!-- Marketing messaging and featurettes -->
+<main>
 
-      <div class="container marketing">
-        <!-- Three columns of text below the carousel -->
-        <div class="row">
-          <!-- First column -->
-          <div class="col-lg-4">
-            <!-- SVG image placeholder (rounded circle) -->
-            <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false">
-              <title>Placeholder</title>
-              <rect width="100%" height="100%" fill="var(--bs-secondary-color)"/>
-            </svg>
-            <h2 class="fw-normal">Heading</h2>
-            <p>Some representative placeholder content for the three columns of text below the carousel. This is the first column.</p>
-            <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
-          </div><!-- /.col-lg-4 -->
-          <!-- Second column -->
-          <div class="col-lg-4">
-            <!-- SVG image placeholder (rounded circle) -->
-            <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false">
-              <title>Placeholder</title>
-              <rect width="100%" height="100%" fill="var(--bs-secondary-color)"/>
-            </svg>
-            <h2 class="fw-normal">Heading</h2>
-            <p>Another exciting bit of representative placeholder content. This time, we've moved on to the second column.</p>
-            <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
-          </div><!-- /.col-lg-4 -->
-          <!-- Third column -->
-          <div class="col-lg-4">
-            <!-- SVG image placeholder (rounded circle) -->
-            <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false">
-              <title>Placeholder</title>
-              <rect width="100%" height="100%" fill="var(--bs-secondary-color)"/>
-            </svg>
-            <h2 class="fw-normal">Heading</h2>
-            <p>And lastly this, the third column of representative placeholder content.</p>
-            <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
-          </div><!-- /.col-lg-4 -->
-        </div><!-- /.row -->
-        <!-- End of the section with featurettes -->
-      </div><!-- /.container -->
+  <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <!-- Slide 1 -->
+      <div class="carousel-item active">
+        <!-- SVG image placeholder for slide 1 -->
+        <svg class="bd-placeholder-img-1" width="100vw" height="100vh" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+          <rect width="100%" height="100%" fill="var(--bs-secondary-color)"/>
+        </svg>
+        <div class="container">
+          <div class="carousel-caption text-start">
+            <h1>Marketing Technology</h1>
+            <p>Tired of rising advertising costs? Get a B2B or B2C Lead Gen App</p>
+            <p><a class="btn btn-lg btn-primary" href="./store.html">Sign Up Today</a></p>
+          </div>
+        </div>
+      </div>
+      <!-- Slide 2 -->
+      <div class="carousel-item">
+        <!-- SVG image placeholder for slide 2 -->
+        <svg class="bd-placeholder-img-2" width="100vw" height="100vh" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+          <rect width="100%" height="100%" fill="var(--bs-secondary-color)"/>
+        </svg>
+        <div class="container">
+          <div class="carousel-caption">
+            <h1>Financial Technology</h1>
+            <p>Need to maximise your savings and reduce debt? Get a Financial Planning App</p>
+            <p><a class="btn btn-lg btn-primary" href="./store.html">Learn More</a></p>
+          </div>
+        </div>
+      </div>
+      <!-- Slide 3 -->
+      <div class="carousel-item">
+        <!-- SVG image placeholder for slide 3 -->
+        <svg class="bd-placeholder-img-3" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+          <rect width="100%" height="100%" fill="var(--bs-secondary-color)"/>
+        </svg>
+        <div class="container">
+          <div class="carousel-caption text-end">
+            <h1>Education Technology</h1>
+            <p>Looking to create better experiences for learners? Get a Tutor App</p>
+            <p><a class="btn btn-lg btn-primary" href="./store.html">Enquire Today</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Carousel navigation controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</main>
 
-      <!-- FOOTER -->
-      <footer class="container">
-        <p class="float-end"><a href="#">Back to top</a></p>
-        <p>&copy; 2015–2023 GTE Online &middot; <a href="#">Privacy Policy</a> &middot; <a href="#">Terms & Conditions</a></p>
-      </footer>
-    </main>
+<!-- Marketing messaging and featurettes -->
+<div class="container marketing">
+  <!-- Three columns of text below the carousel -->
+  <div class="row">
+    <!-- Column 1: MarkTech -->
+    <div class="col-lg-4" style="margin-right:10px; margin-left: -20px; color: white;">
+      <img class="bd-placeholder-img rounded-circle" width="150" height="150" src="./graphics/markTech.jpg"/>
+      <h2 class="fw-normal">MarkTech</h2>
+      <p> Revolutionize marketing strategies with MarkTech's cutting-edge tools, amplifying brand reach and customer engagement while optimizing campaigns through data-driven insights.</p>
+      <p><a class="btn btn-secondary" href="./store.html">Learn More</a></p>
+    </div><!-- /.col-lg-4 -->
+    <!-- Column 2: FinTech -->
+    <div class="col-lg-4" style="margin-right:10px; color: white;">
+      <img class="bd-placeholder-img rounded-circle" width="150" height="150" src="./graphics/finTech.jpg"/>
+      <h2 class="fw-normal">FinTech</h2>
+      <p>Empower financial decisions with FinTech's seamless solutions, simplifying transactions, investing, and budgeting, ensuring secure and efficient money management for individuals and businesses.</p>
+      <p><a class="btn btn-secondary" href="./store.html">Learn More</a></p>
+    </div><!-- /.col-lg-4 -->
+    <!-- Column 3: EdTech -->
+    <div class="col-lg-4" style="color: white;">
+      <img class="bd-placeholder-img rounded-circle" width="150" height="150" src="./graphics/edTech.jpg"/>
+      <h2 class="fw-normal">EdTech</h2>
+      <p>Transform learning experiences with EdTech's innovative platforms, delivering personalized education, skill development, and knowledge enrichment, catering to diverse learners and fostering lifelong growth.</p>
+      <p><a class="btn btn-secondary" href="./store.html">Learn More</a></p>
+    </div><!-- /.col-lg-4 -->
+  </div><!-- /.row -->
+</div>
 
-    <!-- JavaScript libraries -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>
-  </body>
+<!-- FOOTER -->
+<footer class="container">
+  <p class="float-end"><a href="#">Back to top</a></p>
+  <p style="color: white;">&copy; 2015–2023 GTE Online &middot; <a href="#">Privacy Policy</a> &middot; <a href="#">Terms & Conditions</a></p>
+</footer>
+
+<!-- Load Popper.js and Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>
+</body>
 </html>
