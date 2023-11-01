@@ -1,15 +1,12 @@
 const cart = document.querySelectorAll(".addToCart");
 console.log(cart);
 
+
 const products = [
-    { name: 'Product 1', price: '1000', image: 'https://imagizer.imageshack.com/img924/5833/FbZiAG.jpg',inCart: 0 },
-    { name: 'Product 2', price: '2000', image: 'https://imagizer.imageshack.com/img924/5833/FbZiAG.jpg',inCart: 0 },
-    { name: 'Product 3', price: '3000', image: 'https://imagizer.imageshack.com/img924/5833/FbZiAG.jpg',inCart: 0 },
-    { name: 'Product 4', price: '4000', image: 'https://imagizer.imageshack.com/img924/5833/FbZiAG.jpg',inCart: 0 },
-
-    
+    { name: 'MarkTech Package', price: '1000', image: './graphics/markTech.jpg', inCart: 0 },
+    { name: 'FinTech Package', price: '2000', image: './graphics/finTech.jpg', inCart: 0 },
+    { name: 'EdTech Package', price: '3000', image: './graphics/edTech.jpg', inCart: 0 }, 
 ];
-
 
 
 function totalCost(product) {
