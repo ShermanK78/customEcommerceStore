@@ -1,12 +1,13 @@
 /* GLOBAL STYLES
 -------------------------------------------------- */
-
 /* Padding below the footer and lighter body text */
+
 body {
   padding-top: 3rem;
   padding-bottom: 3rem;
-  color: rgb(var(--bs-tertiary-color-rgb));
+  background-color: black;
 }
+
 
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */
@@ -15,7 +16,6 @@ body {
 .carousel {
   margin-bottom: 4rem;
 }
-
 /* Since positioning the image, we need to help out the caption */
 .carousel-caption {
   bottom: 3rem;
@@ -27,6 +27,7 @@ body {
   height: 32rem;
 }
 
+
 /* MARKETING CONTENT
 -------------------------------------------------- */
 
@@ -35,13 +36,13 @@ body {
   margin-bottom: 1.5rem;
   text-align: center;
 }
-
 /* rtl:begin:ignore */
 .marketing .col-lg-4 p {
   margin-right: .75rem;
   margin-left: .75rem;
 }
 /* rtl:end:ignore */
+
 
 /* Featurettes
 ------------------------- */
@@ -55,6 +56,7 @@ body {
 .featurette-heading {
   letter-spacing: -.05rem;
 }
+
 /* rtl:end:remove */
 
 /* RESPONSIVE CSS
@@ -78,36 +80,30 @@ body {
     margin-top: 7rem;
   }
 }
-
-/* Background images for the carousel */
-
 .bd-placeholder-img-1 {
-  background-image: url("C:/Users/Camilla/Pictures/AI-cybersecurity-scaled.jpg");
+  background-image: url("markTech-banner.jpg");
   background-size: cover;
   max-width: 100vw;
   max-height: 100vh;
+  
 }
-
 .bd-placeholder-img-2 {
-  background-image: url("C:/Users/Camilla/Desktop/MERN/Design Files/weather-app-img/images/regular_1708x683_staging.toptal.net_react_react-seo-best-practices-ed6f6c2c1a89dcf71c9f845c32edb9c1-7c9b1683bdbb4db5bfa6dfee97e91d6c.png");
+  background-image: url("fintech-banner.jpg");
   background-size: cover;
   max-width: 100vw;
   max-height: 100vh;
+  
 }
-
 .bd-placeholder-img-3 {
-  background-image: url("C:/Users/Camilla/Desktop/MERN/Design Files/weather-app-img/images/Offline-app.png");
+  background-image: url("edtech-banner.jpg");
   background-size: cover;
   max-width: 100vw;
   max-height: 100vh;
+  
 }
-
-/* Custom CSS for navigation */
-
 .nav-item {
-  margin-left: 10px;
+  margin-right: 10px;
 }
-
 .header {
   height: 80px;
   width: 70%;
@@ -119,20 +115,21 @@ body {
   justify-content: space-between;
   padding: 15px;
 }
-
 .header .logo {
   font-size: 30px;
   font-weight: bold;
   color: white;
 }
-
+/* Custom CSS */
 .white-icon {
   color: white;
 }
 
+
 /* CSS for the modal */
 
-/* CSS for the modal buttons */
+
+
 .modal-buttons {
   text-align: right;
 }
@@ -162,7 +159,9 @@ body {
   border-radius: 8px;
   max-height: 100vh; /* Adjust the max height as needed */
   background-color: rgba(4, 17, 132, 0.521);
+
 }
+
 
 /* CSS for the cards container */
 .container {
@@ -173,22 +172,111 @@ body {
 
 /* CSS for the individual cards */
 .card {
-  margin: 12px;
+  margin: 10px;
 }
 
+
 /* CSS for the individual modal buttons */
-#stayBtn,
-#leaveBtn {
+#stayBtn, #leaveBtn {
   flex: 1;
   margin: 5px;
 }
-
-/* Custom CSS */
 img {
   max-width: 40vw;
   max-height: 40vw;
 }
 
+#container-fluid-1 {
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
+}
+
+.b-example-divider {
+  width: 100%;
+  height: 3rem;
+  background-color: rgba(0, 0, 0, .1);
+  border: solid rgba(0, 0, 0, .15);
+  border-width: 1px 0;
+  box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+}
+
+.b-example-vr {
+  flex-shrink: 0;
+  width: 1.5rem;
+  height: 100vh;
+}
+
+.bi {
+  vertical-align: -.125em;
+  fill: currentColor;
+}
+
+.nav-scroller {
+  position: relative;
+  z-index: 2;
+  height: 2.75rem;
+  overflow-y: hidden;
+}
+
+.nav-scroller .nav {
+  display: flex;
+  flex-wrap: nowrap;
+  padding-bottom: 1rem;
+  margin-top: -1px;
+  overflow-x: auto;
+  text-align: center;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+}
+
+.btn-bd-primary, .btn.btn-primary.addToCart {
+  --bd-violet-bg: #0400fb;
+  --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+  --bs-btn-font-weight: 600;
+  --bs-btn-color: var(--bs-white);
+  --bs-btn-bg: var(--bd-violet-bg);
+  --bs-btn-border-color: var(--bd-violet-bg);
+  --bs-btn-hover-color: var(--bs-white);
+  --bs-btn-hover-bg: #28b2e0;
+  --bs-btn-hover-border-color: #28b2e0;
+  --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+  --bs-btn-active-color: var(--bs-btn-hover-color);
+  --bs-btn-active-bg: #00a806;
+  --bs-btn-active-border-color: #00a806;
+}
+.bd-mode-toggle {
+  z-index: 1500;
+}
+
+.col-lg-4{
+  background-color: #2f2c6f;
+  padding-top: 20px;
+  border-radius: 5%;
+  max-width: 500px;
+}
+.card-img-top {
+  max-width: 100%;
+  max-height: 100%;
+}
+.row {
+  flex: auto;
+}
 .container-fluid-1 {
-  margin: 20px;
+  margin-top: 20px;
+  margin-left: 20px;
 }
